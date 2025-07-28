@@ -9,7 +9,7 @@ export default function HeroSection() {
                             Software Engineer
                         </span>{" "}
                     </h1>
-                    <p className="hero--section--description"> Description here. 
+                    <p className="hero--section--description"> I'm a current MEng student at MIT studying Computer Science with an AI focus. I love all things robotics and computer vision 
                     <br /> More Here.
                     </p>
                 </div>
