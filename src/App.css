@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-black text-white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  }
+}
+
+/* Custom 3D carousel styles */
+.perspective-container {
+  perspective: 2000px;
+  perspective-origin: center center;
+}
+
+.carousel-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.project-card-3d {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Ensure dark theme colors */
+.bg-card {
+  background-color: rgb(31, 41, 55) !important;
+}
+
+.border-card {
+  border-color: rgb(55, 65, 81) !important;
+}
+
+.text-muted-foreground {
+  color: rgb(156, 163, 175) !important;
+}
+
+.App {
+  background-color: #fefae0;
+}
+
+.hero--section--description {
+  color: #909A70;
+  font: "Lucidia Console";
+}
+
+
+.hero--section--title {
+  color: #545E31;
+  font: "Lucidia Console";
+}
+
+.hero--section {
+  background: "linear-gradient(to bottom, #14213D, #000000)"
+}

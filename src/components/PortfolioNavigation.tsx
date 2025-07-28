@@ -31,10 +31,10 @@ export default function PortfolioNavigation({projects, prevProject, nextProject,
                     transition: "background-color 0.2s",
                     }}
                     onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "#4b5563"
+                    e.currentTarget.style.backgroundColor = "#6C783F"
                     }}
                     onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "#374151"
+                    e.currentTarget.style.backgroundColor = "#545E31"
                     }}
                     aria-label="Previous project"
                 >
@@ -50,7 +50,7 @@ export default function PortfolioNavigation({projects, prevProject, nextProject,
                         width: activeIndex === index ? "20px" : "10px",
                         height: "10px",
                         borderRadius: "5px",
-                        backgroundColor: activeIndex === index ? "#8b5cf6" : "#4b5563",
+                        backgroundColor: activeIndex === index ? "#E9EDC9" : "#545E31",
                         border: "none",
                         cursor: "pointer",
                         transition: "all 0.3s ease",
@@ -68,18 +68,18 @@ export default function PortfolioNavigation({projects, prevProject, nextProject,
                     justifyContent: "center",
                     width: "40px",
                     height: "40px",
-                    backgroundColor: "#374151",
-                    border: "1px solid #4b5563",
+                    backgroundColor: "#545E31",
+                    border: "1px solid #6C783F",
                     borderRadius: "6px",
                     color: "white",
                     cursor: "pointer",
                     transition: "background-color 0.2s",
                     }}
                     onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "#4b5563"
+                    e.currentTarget.style.backgroundColor = "#6C783F"
                     }}
                     onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "#374151"
+                    e.currentTarget.style.backgroundColor = "#545E31"
                     }}
                     aria-label="Next project"
                 >

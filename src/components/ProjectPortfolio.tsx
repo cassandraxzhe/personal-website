@@ -93,7 +93,7 @@ export default function ProjectPortfolio() {
   return (
     <div
       className="w-full flex flex-col items-center py-12"
-      style={{ background: "linear-gradient(to bottom, #000000, #1f2937)" }}
+      style={{ background: "linear-gradient(to bottom, #909A70, #FEFAE0)" }}
     >
       {/* Navigation Header */}
       <PortfolioNavigation 
@@ -156,11 +156,11 @@ export default function ProjectPortfolio() {
                   style={{
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "#1f2937",
-                    border: "1px solid #374151",
+                    backgroundColor: "#CCD5AE",
+                    border: "1px solid #909A70",
                     borderRadius: "12px",
                     overflow: "hidden",
-                    boxShadow: "0 25px 50px -12px rgba(139, 92, 246, 0.25)",
+                    boxShadow: "0 25px 50px -12px #909A70",
                   }}
                 >
                   <div
@@ -187,7 +187,7 @@ export default function ProjectPortfolio() {
                         fontSize: "18px",
                         fontWeight: "bold",
                         marginBottom: "8px",
-                        color: "white",
+                        color: "#545E31",
                       }}
                     >
                       {project.title}
@@ -195,7 +195,7 @@ export default function ProjectPortfolio() {
                     <p
                       style={{
                         marginBottom: "12px",
-                        color: "#9ca3af",
+                        color: "#6C783F",
                         fontSize: "14px",
                         lineHeight: "1.4",
                       }}
@@ -217,9 +217,9 @@ export default function ProjectPortfolio() {
                           style={{
                             display: "inline-flex",
                             alignItems: "center",
-                            backgroundColor: "#374151",
-                            color: "#e5e7eb",
-                            border: "1px solid #4b5563",
+                            backgroundColor: "#909A70",
+                            color: "#FEFAE0",
+                            border: "1px solid #FEFAE0",
                             borderRadius: "9999px",
                             padding: "2px 8px",
                             fontSize: "11px",
@@ -239,7 +239,7 @@ export default function ProjectPortfolio() {
                         style={{
                           display: "inline-flex",
                           alignItems: "center",
-                          backgroundColor: "#7c3aed",
+                          backgroundColor: "#545E31",
                           color: "white",
                           padding: "6px 12px",
                           borderRadius: "6px",
@@ -249,10 +249,10 @@ export default function ProjectPortfolio() {
                           transition: "background-color 0.2s",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "#6d28d9"
+                          e.currentTarget.style.backgroundColor = "#626d37ff"
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "#7c3aed"
+                          e.currentTarget.style.backgroundColor = "#545E31"
                         }}
                       >
                         <ExternalLink style={{ width: "12px", height: "12px", marginRight: "4px" }} />
@@ -266,8 +266,8 @@ export default function ProjectPortfolio() {
                           display: "inline-flex",
                           alignItems: "center",
                           backgroundColor: "transparent",
-                          color: "#d1d5db",
-                          border: "1px solid #4b5563",
+                          color: "#545E31",
+                          border: "1px solid #545E31",
                           padding: "6px 12px",
                           borderRadius: "6px",
                           fontSize: "12px",
@@ -276,7 +276,7 @@ export default function ProjectPortfolio() {
                           transition: "background-color 0.2s",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "#374151"
+                          e.currentTarget.style.backgroundColor = "#909A70"
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.backgroundColor = "transparent"
