@@ -1,0 +1,306 @@
+"use client"
+
+import { useRef, useState, useEffect } from "react"
+import { ExternalLink, Github } from "lucide-react"
+import PortfolioNavigation from "./PortfolioNavigation.tsx"
+
+// Sample project data - replace with your own
+const projects = [
+  {
+    id: 1,
+    title: "Mobile Autonomous Systems Lab Competition",
+    description: "TODO",
+    image: "./img/SillyBillies.png",
+    tags: ["Python", "C/C++", "OpenCV", "ROS2", "Arduino"],
+    liveUrl: "https://maslab.mit.edu/2024/wiki/team11",
+    githubUrl: "https://github.com/username/project",
+  },
+  {
+    id: 2,
+    title: "Project 2",
+    description: "TODO",
+    image: "/placeholder.svg?height=400&width=600&text=Task+Management+App",
+    tags: ["TODO"],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/username/project",
+  },
+  {
+    id: 3,
+    title: "Project 3",
+    description: "TODO",
+    image: "/placeholder.svg?height=400&width=600&text=Weather+Dashboard",
+    tags: ["TODO"],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/username/project",
+  },
+  {
+    id: 4,
+    title: "Project 4",
+    description: "TODO",
+    image: "/placeholder.svg?height=400&width=600&text=Social+Media+Platform",
+    tags: ["TODO"],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/username/project",
+  },
+  {
+    id: 5,
+    title: "Project 5",
+    description: "TODO",
+    image: "/placeholder.svg?height=400&width=600&text=Fitness+Tracker",
+    tags: ["TODO"],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/username/project",
+  },
+]
+
+export default function ProjectPortfolio() {
+  const carouselRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [rotation, setRotation] = useState(0)
+  const totalProjects = projects.length
+
+  // Calculate the angle for each project
+  const anglePerProject = 360 / totalProjects
+
+  // Update rotation when active index changes
+  useEffect(() => {
+    setRotation(-activeIndex * anglePerProject)
+  }, [activeIndex, anglePerProject])
+
+  const goToProject = (index: number) => {
+    // Handle wrapping around
+    let newIndex = index
+    if (newIndex < 0) newIndex = totalProjects - 1
+    if (newIndex >= totalProjects) newIndex = 0
+
+    setActiveIndex(newIndex)
+  }
+
+  const nextProject = () => goToProject(activeIndex + 1)
+  const prevProject = () => goToProject(activeIndex - 1)
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") nextProject()
+      if (e.key === "ArrowLeft") prevProject()
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [activeIndex])
+
+  return (
+    <div
+      className="w-full flex flex-col items-center py-12"
+      style={{ background: "linear-gradient(to bottom, #000000, #1f2937)" }}
+    >
+      {/* Navigation Header */}
+      <PortfolioNavigation 
+      projects={projects} 
+      prevProject={prevProject} 
+      nextProject={nextProject} 
+      goToProject={goToProject}
+      activeIndex={activeIndex}
+      />
+
+      {/* 3D Carousel Container */}
+      <div
+        style={{
+          width: "100%",
+          height: "600px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          perspective: "1500px",
+          perspectiveOrigin: "center center",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          ref={carouselRef}
+          style={{
+            position: "relative",
+            width: "600px",
+            height: "400px",
+            transformStyle: "preserve-3d",
+            transform: `rotateY(${rotation}deg)`,
+            transition: "transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+            left: "0",
+            top: "0",
+          }}
+        >
+          {projects.map((project, index) => {
+            // Calculate the angle for this project
+            const theta = anglePerProject * index
+            // Calculate the z-position to create a circle
+            const radius = 500
+
+            return (
+              <div
+                key={project.id}
+                style={{
+                  position: "absolute",
+                  left: "50%",
+                  top: "50%",
+                  width: "500px",
+                  height: "375px",
+                  transform: `translate(-50%, -50%) rotateY(${theta}deg) translateZ(${radius}px)`,
+                  transformStyle: "preserve-3d",
+                  backfaceVisibility: "hidden",
+                  opacity: activeIndex === index ? 1 : 0.8,
+                  transition: "opacity 0.5s ease",
+                }}
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "#1f2937",
+                    border: "1px solid #374151",
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    boxShadow: "0 25px 50px -12px rgba(139, 92, 246, 0.25)",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      backgroundColor: "#111827",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <img
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div style={{ padding: "16px" }}>
+                    <h3
+                      style={{
+                        fontSize: "18px",
+                        fontWeight: "bold",
+                        marginBottom: "8px",
+                        color: "white",
+                      }}
+                    >
+                      {project.title}
+                    </h3>
+                    <p
+                      style={{
+                        marginBottom: "12px",
+                        color: "#9ca3af",
+                        fontSize: "14px",
+                        lineHeight: "1.4",
+                      }}
+                    >
+                      {project.description}
+                    </p>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        flexWrap: "wrap",
+                        gap: "6px",
+                        marginBottom: "16px",
+                      }}
+                    >
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            backgroundColor: "#374151",
+                            color: "#e5e7eb",
+                            border: "1px solid #4b5563",
+                            borderRadius: "9999px",
+                            padding: "2px 8px",
+                            fontSize: "11px",
+                            fontWeight: "600",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div style={{ display: "flex", gap: "8px" }}>
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          backgroundColor: "#7c3aed",
+                          color: "white",
+                          padding: "6px 12px",
+                          borderRadius: "6px",
+                          fontSize: "12px",
+                          fontWeight: "500",
+                          textDecoration: "none",
+                          transition: "background-color 0.2s",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = "#6d28d9"
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = "#7c3aed"
+                        }}
+                      >
+                        <ExternalLink style={{ width: "12px", height: "12px", marginRight: "4px" }} />
+                        Link
+                      </a>
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          backgroundColor: "transparent",
+                          color: "#d1d5db",
+                          border: "1px solid #4b5563",
+                          padding: "6px 12px",
+                          borderRadius: "6px",
+                          fontSize: "12px",
+                          fontWeight: "500",
+                          textDecoration: "none",
+                          transition: "background-color 0.2s",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = "#374151"
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = "transparent"
+                        }}
+                      >
+                        <Github style={{ width: "12px", height: "12px", marginRight: "4px" }} />
+                        Source Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* BG */}
+      <div
+        className="w-full h-20 mt-4"
+        style={{
+          background: "linear-gradient(to top, transparent, rgba(0, 0, 0, 0.2))",
+        }}
+      ></div>
+    </div>
+  )
+}
