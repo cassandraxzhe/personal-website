@@ -11,9 +11,19 @@ export default function PortfolioNavigation({projects, prevProject, nextProject,
                 justifyContent: "space-between",
                 position: "relative",
                 zIndex: 10,
+                marginLeft: 16,
+                marginRight: 16
                 }}
             >
-                <h2 className="text-3xl font-bold text-white">Projects</h2>
+                <h2 
+                    className="text-3xl font-bold text-white"
+                    style={{
+                        color: "#545E31",
+                        fontSize: 36
+                    }}
+                >
+                    Projects
+                </h2>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <button
                     onClick={prevProject}

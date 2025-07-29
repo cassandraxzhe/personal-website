@@ -71,7 +71,7 @@
 }
 
 .hero--section--description {
-  color: #909A70;
+  color: #E9EDC9;
   font: "Lucidia Console";
 }
 
@@ -82,5 +82,16 @@
 }
 
 .hero--section {
-  background: "linear-gradient(to bottom, #14213D, #000000)"
+  background-color: "#545E31"
+}
+
+.section--title {
+  color: #E9EDC9;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.hero--section-img {
+  display: flex;
+  justify-content: center;
 }
