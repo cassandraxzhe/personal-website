@@ -27,7 +27,7 @@ export default function MyExperience() {
     ]
 
     return (
-        <div style={{marginLeft: '10%', marginRight: '10%'}}>
+        <div id="myExperience" style={{marginLeft: '10%', marginRight: '10%'}}>
             <h2
                 className="text-3xl font-bold text-white"
                 style={{
