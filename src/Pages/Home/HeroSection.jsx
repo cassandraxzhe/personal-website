@@ -3,8 +3,23 @@ import { Mail } from "lucide-react"
 export default function HeroSection() {
     return (
         <section id="heroSection" className="hero--section" style={{background: "#909A70"}}>
-            <div className="hero--section--img" style={{display: "flex", justifyContent: "center"}}>
-                <img src="./img/hero-section-img.png" alt="Hero Section"/>
+            <div 
+                className="hero--section--img" 
+                style={{
+                    display: "flex", 
+                    justifyContent: "center",
+                    height: "150px",
+                    paddingTop: "2%"
+                    
+                }}
+            >
+                <img 
+                    src="./img/Headshot.png" 
+                    alt="Hero Section"
+                    style={{
+                        borderRadius: "50%"
+                    }}
+                />
             </div>
             <div className="hero--section--content--box">
                 <div className="hero--section--content" style={{textAlign: "center"}}>
@@ -35,7 +50,7 @@ export default function HeroSection() {
                     }}
                 >
                     <a
-                        href="Contact me!"//TODO: Contact link
+                        href="mailto:casxzhe@mit.edu"//TODO: Contact link
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
