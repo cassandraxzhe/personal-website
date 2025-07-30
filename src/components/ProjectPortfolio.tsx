@@ -21,8 +21,8 @@ const projects = [
     description: "Explored performance optimization using evolutionary algorithms.",
     image: "./img/HWML-fig1.png",
     tags: ["Research", "Python", "AI/ML", "Accelerators", "Computer Hardware"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project",
+    liveUrl: "https://drive.google.com/file/d/1jeC9jgTr8-pkgFZ4m_AWC-63scFmNwmR/view",
+    githubUrl: "https://github.com/cassandraxzhe/dataflow-optimization",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const projects = [
     description: "Mask R-CNN based model for tomato plant health and defect tracking.",
     image: "./img/tomato.png",
     tags: ["Python", "OpenCV", "AI/ML", "Research"],
-    liveUrl: "https://example.com",
+    liveUrl: "https://drive.google.com/drive/folders/1wnszAVmL2EHhBte8J6zrq0DIdumQ1pXM?usp=sharing",
     githubUrl: "https://github.com/username/project",
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     description: "Current project. AI-enabled app to help users generate outfits and shop more consciously.",
     image: "/placeholder.svg?height=400&width=600&text=Fitness+Tracker",
     tags: ["Python", "AI/ML", "LLMs", "React", "Databases"],
-    liveUrl: "https://example.com",
+    liveUrl: "https://github.com/username/project",
     githubUrl: "https://github.com/username/project",
   },
   {
@@ -57,8 +57,8 @@ const projects = [
     description: "Current project exploring automation of sorting recyclables.",
     image: "/placeholder.svg?height=400&width=600&text=Fitness+Tracker",
     tags: ["In-progress", "CV", "ROS", "Python", "Manipulation"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/username/project",
+    liveUrl: "https://github.com/cassandraxzhe/recycling-sort",
+    githubUrl: "https://github.com/cassandraxzhe/recycling-sort",
   }
 ]
 
