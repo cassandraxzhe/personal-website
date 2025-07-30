@@ -7,14 +7,14 @@ export default function HeroSection() {
                 <img src="./img/hero-section-img.png" alt="Hero Section"/>
             </div>
             <div className="hero--section--content--box">
-                <div className="hero--section--content">
-                    <p className="section--title" style={{textAlign:"center"}}>Hey, I'm Cassandra!</p>
-                    <h1 className="hero--section--title" style={{marginLeft: '20%', marginRight: '20%', textAlign: "center"}}>
+                <div className="hero--section--content" style={{textAlign: "center"}}>
+                    <p className="section--title" style={{fontSize: '36px'}}>Hey, I'm Cassandra!</p>
+                    <h1 className="hero--section--title" style={{marginLeft: '20%', marginRight: '20%', fontSize: '30px'}}>
                         <span className="hero--section--title--color">
                             MEng Student & Software Engineer
                         </span>{" "}
                     </h1>
-                    <p className="hero--section--description" style={{marginLeft: '20%', marginRight: '20%', textAlign: "center"}}> 
+                    <p className="hero--section--description" style={{marginLeft: '20%', marginRight: '20%', fontSize: '24px'}}> 
                         I'm a Computer Science and Engineering student at MIT, currently pursuing my MEng with a focus on Artificial Intelligence. My passion lies at the intersection of software, robotics, and human-centered research.
                     <br />
                     <br />Over the past few years, I’ve worked on everything from developing real-time robotic vision systems at Amazon Robotics to co-authoring research on biohybrid neural actuators at the MIT Media Lab. Whether I’m training detection models, analyzing swine behavior data, or optimizing hardware accelerators with genetic algorithms, I love solving complex problems with a blend of rigorous experimentation and creative thinking.

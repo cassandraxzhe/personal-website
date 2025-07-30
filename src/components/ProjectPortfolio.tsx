@@ -9,7 +9,7 @@ const projects = [
   {
     id: 1,
     title: "Mobile Autonomous Systems Lab Competition",
-    description: "TODO",
+    description: "4-week robotics competition. Won \"Best Autonomous Design\".",
     image: "./img/SillyBillies.png",
     tags: ["Python", "C/C++", "OpenCV", "ROS2", "Arduino"],
     liveUrl: "https://maslab.mit.edu/2024/wiki/team11",
@@ -17,40 +17,49 @@ const projects = [
   },
   {
     id: 2,
-    title: "Project 2",
-    description: "TODO",
-    image: "/placeholder.svg?height=400&width=600&text=Task+Management+App",
-    tags: ["TODO"],
+    title: "Optimization of Accelerator Dataflow via Genetic Algorithms",
+    description: "Explored performance optimization using evolutionary algorithms.",
+    image: "./img/HWML-fig1.png",
+    tags: ["Research", "Python", "AI/ML", "Accelerators", "Computer Hardware"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/username/project",
   },
   {
     id: 3,
-    title: "Project 3",
-    description: "TODO",
-    image: "/placeholder.svg?height=400&width=600&text=Weather+Dashboard",
-    tags: ["TODO"],
+    title: "Tomato Plant Health Tracker",
+    description: "Mask R-CNN based model for tomato plant health and defect tracking.",
+    image: "./img/tomato.png",
+    tags: ["Python", "OpenCV", "AI/ML", "Research"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/username/project",
   },
   {
     id: 4,
-    title: "Project 4",
-    description: "TODO",
-    image: "/placeholder.svg?height=400&width=600&text=Social+Media+Platform",
-    tags: ["TODO"],
+    title: "A fatigue-resistant myoneural actuator for implantable biohybrid systems",
+    description: "Co-author. Conducted histological analysis using computer vision.",
+    image: "./img/biomech-cellpose.png",
+    tags: ["Research", "Python", "Statistical Analysis", "Computer Vision"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/username/project",
   },
   {
     id: 5,
-    title: "Project 5",
-    description: "TODO",
+    title: "Smart Closet Tracking App",
+    description: "Current project. AI-enabled app to help users generate outfits and shop more consciously.",
     image: "/placeholder.svg?height=400&width=600&text=Fitness+Tracker",
-    tags: ["TODO"],
+    tags: ["Python", "AI/ML", "LLMs", "React", "Databases"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/username/project",
   },
+  {
+    id: 6,
+    title: "Robotic Pick-and-Place Recyclable Sorter",
+    description: "Current project exploring automation of sorting recyclables.",
+    image: "/placeholder.svg?height=400&width=600&text=Fitness+Tracker",
+    tags: ["In-progress", "CV", "ROS", "Python", "Manipulation"],
+    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/username/project",
+  }
 ]
 
 export default function ProjectPortfolio() {
@@ -93,7 +102,7 @@ export default function ProjectPortfolio() {
   return (
     <div
       className="w-full flex flex-col items-center py-12"
-      style={{ background: "linear-gradient(to bottom, #909A70, #FEFAE0)" }}
+      style={{ background: "linear-gradient(to bottom, #909A70, #FEFAE0)"}}
     >
       {/* Navigation Header */}
       <PortfolioNavigation 
@@ -114,7 +123,7 @@ export default function ProjectPortfolio() {
           alignItems: "center",
           perspective: "1500px",
           perspectiveOrigin: "center center",
-          overflow: "hidden",
+          overflow: "visible"
         }}
       >
         <div
@@ -167,8 +176,9 @@ export default function ProjectPortfolio() {
                     style={{
                       width: "100%",
                       height: "200px",
-                      backgroundColor: "#111827",
+                      backgroundColor: "#FEFAE0",
                       overflow: "hidden",
+                      
                     }}
                   >
                     <img
@@ -187,6 +197,7 @@ export default function ProjectPortfolio() {
                         fontSize: "18px",
                         fontWeight: "bold",
                         marginBottom: "8px",
+                        marginTop: "0px",
                         color: "#545E31",
                       }}
                     >
@@ -256,7 +267,7 @@ export default function ProjectPortfolio() {
                         }}
                       >
                         <ExternalLink style={{ width: "12px", height: "12px", marginRight: "4px" }} />
-                        Link
+                        More
                       </a>
                       <a
                         href={project.githubUrl}

@@ -11,8 +11,8 @@ export default function PortfolioNavigation({projects, prevProject, nextProject,
                 justifyContent: "space-between",
                 position: "relative",
                 zIndex: 10,
-                marginLeft: 16,
-                marginRight: 16
+                marginLeft: '10%',
+                marginRight: '10%'
                 }}
             >
                 <h2 
@@ -22,7 +22,7 @@ export default function PortfolioNavigation({projects, prevProject, nextProject,
                         fontSize: 36
                     }}
                 >
-                    Projects
+                    Projects & Research
                 </h2>
                 <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <button
