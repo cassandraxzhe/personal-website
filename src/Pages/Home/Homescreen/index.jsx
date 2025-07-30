@@ -21,6 +21,10 @@ export default function Home() {
             name: "Github",
             link: "https://github.com/cassandraxzhe",
         },
+        {
+            name: "LinkedIn",
+            link: "https://www.linkedin.com/in/cassandra-he-373102232/",
+        },
     ]
    
     return(

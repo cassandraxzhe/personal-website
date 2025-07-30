@@ -37,18 +37,23 @@ export default function ExperienceCard({title, company, loc, date, description, 
                 </h2>
                 <h3
                     style={{
-                        color: "#909A70"
+                        color: "#727C51"
                     }}
                 >
                     {title}
                 </h3>
-                <p
+                <div
                     style={{
-                        color: "#AEB88F"
+                        color: "#909A70"
                     }}
                 >
-                    {description}
-                </p>
+                    {description.map((bullet) => (
+                        <p>
+                            {bullet}
+                            <br></br>
+                        </p>
+                    ))}
+                </div>
                 <div
                       style={{
                         display: "flex",
